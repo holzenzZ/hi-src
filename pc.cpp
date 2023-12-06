@@ -282,7 +282,7 @@ unsigned int equip_bitmask[EQI_MAX] = {
 	EQP_GARMENT,			// EQI_GARMENT
 	EQP_HEAD_LOW,			// EQI_HEAD_LOW
 	EQP_HEAD_MID,			// EQI_HEAD_MID
-	EQP_HEAD_TOP,			// EQI_HEAD_TOP
+	EQP_HEAD_TOP,			// EQI_HEAD_TOP
 	EQP_ARMOR,				// EQI_ARMOR
 	EQP_HAND_L,				// EQI_HAND_L
 	EQP_HAND_R,				// EQI_HAND_R
@@ -867,7 +867,7 @@ bool pc_can_give_bounded_items(struct map_session_data *sd)
 }
 
 /**
- * Determine if an item in a player's inventory is tradeable based on several merits.
+ * Determine if an item in a player's inventory is tradeable based on several merits.
  * Checks for item_trade, bound, and rental restrictions.
  * @param sd: Player data
  * @param index: Item inventory index
@@ -2300,7 +2300,7 @@ int pc_calc_skilltree_normalize_job(struct map_session_data *sd)
 		if (skill_point < novice_skills + (sd->change_level_2nd - 1))
 		{
 			c &= MAPID_BASEMASK;
-		}
+		}
 		// limit 3rd class to 2nd class/trans job levels
 		else if(sd->class_&JOBL_THIRD)
 		{
@@ -10683,7 +10683,7 @@ bool pc_equipitem(struct map_session_data *sd,short n,int req_pos,bool equipswit
 		}
 	}
 
-	status_calc_pc(sd,SCO_NONE);
+	status_calc_pc(sd,SCO_FORCE);
 	if (flag) //Update skill data
 		clif_skillinfoblock(sd);
 
